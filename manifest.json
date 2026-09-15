@@ -1,0 +1,16 @@
+{
+    "name": "Checke",
+    "short_name": "Checke",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#f5f5f5",
+    "theme_color": "#333333",
+    "description": "Meine persönliche Todo-App",
+    "icons": [
+        {
+            "src": "checked.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

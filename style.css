@@ -1,0 +1,310 @@
+body {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #f5f5f3;
+    color: #222;
+}
+
+
+/* Überschrift */
+
+h1 {
+    text-align: center;
+
+    margin: 8px 0 28px 0;
+
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+
+    color: #2f3833;
+}
+
+.logoCheck {
+    color: #5F7568;
+    font-size: 34px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+/* Eingabebereich */
+
+#taskInputArea {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+#taskInputArea input {
+    flex: 1;
+    margin: 0;
+    padding: 15px 17px;
+
+    border: 1px solid transparent;
+    background-color: white;
+    border-radius: 14px;
+
+    font-size: 17px;
+    color: #222;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    outline: none;
+
+    transition: box-shadow 0.2s ease,
+                border-color 0.2s ease;
+}
+
+#taskInputArea input::placeholder {
+    color: #999;
+}
+
+#taskInputArea input:focus {
+    border-color: #5F7568;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Plus-Button */
+
+#taskInputArea button {
+    width: 54px;
+    height: 54px;
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 14px;
+
+    background-color: #5F7568;
+    color: white;
+
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 8px rgba(95, 117, 104, 0.25);
+
+    transition: transform 0.15s ease,
+                box-shadow 0.15s ease,
+                background-color 0.15s ease;
+}
+
+#taskInputArea button:hover {
+    background-color: #53695d;
+    box-shadow: 0 4px 10px rgba(95, 117, 104, 0.30);
+}
+
+#taskInputArea button:active {
+    transform: scale(0.92);
+    box-shadow: 0 1px 4px rgba(95, 117, 104, 0.20);
+}
+
+
+/* Heute / Morgen */
+
+#dayNavigation {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 22px;
+    padding: 4px;
+    background-color: #e8e9e7;
+    border-radius: 14px;
+}
+
+.dayTab {
+    flex: 1;
+    margin: 0;
+    padding: 12px;
+    border: none;
+    border-radius: 11px;
+
+    background-color: transparent;
+    color: #666;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.1s ease;
+}
+
+.dayTab.active {
+    background-color: #5F7568;
+    color: white;
+}
+
+.dayTab:active {
+    transform: scale(0.97);
+}
+
+.dayTab.active {
+    background-color: #5F7568;
+    color: white;
+}
+
+
+/* Aufgabenliste */
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Einzelne Aufgabe */
+
+/* Einzelne Aufgabe */
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    background-color: white;
+    border-radius: 16px;
+
+    padding: 16px 18px;
+    margin-bottom: 12px;
+
+    font-size: 17px;
+    line-height: 1.4;
+
+    cursor: pointer;
+
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+
+    transition: transform 0.12s ease,
+                opacity 0.2s ease,
+                box-shadow 0.12s ease;
+}
+
+#taskList li:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+#taskList li:active {
+    transform: scale(0.985);
+}
+
+
+/* Checkbox */
+
+#taskList li input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+
+/* Erledigte Aufgabe */
+
+#taskList li.completed {
+    opacity: 0.6;
+}
+
+#taskList li.completed span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.customCheckbox {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+
+    border: 2px solid #b8b8b8;
+    border-radius: 50%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s ease;
+}
+
+.customCheckbox.checked {
+    background-color: #5F7568;
+    border-color: #5F7568;
+}
+
+.customCheckbox.checked::after {
+    content: "✓";
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.customCheckbox.checked {
+    animation: checkPop 0.2s ease-out;
+}
+
+@keyframes checkPop {
+    0% {
+        transform: scale(0.8);
+    }
+
+    70% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Optimierung für kleine Bildschirme */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 24px 14px;
+    }
+
+    h1 {
+        margin-bottom: 24px;
+    }
+
+    #taskInputArea {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    #taskInputArea input {
+        padding: 14px 15px;
+        font-size: 16px;
+    }
+
+    #taskInputArea button {
+        width: 52px;
+        height: 52px;
+    }
+
+    #dayNavigation {
+        margin-bottom: 18px;
+    }
+
+    #taskList li {
+        padding: 15px 16px;
+        font-size: 17px;
+    }
+}
+
+/* Kein störender Browser-Klick-Effekt */
+
+button,
+#taskList li {
+    -webkit-tap-highlight-color: transparent;
+}
